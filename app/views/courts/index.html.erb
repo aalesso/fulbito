@@ -18,7 +18,13 @@
 
       <% @courts.each do |court| %>
       <tr>
-        <td><%= court.owner.created_at %></td>
+        <td>
+          <% if court.owner.present? %>
+            <a href="/owners_establishments/<%= court.owner.id %>">
+              <%= court.owner.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= court.identification %></td>
         <td><%= court.images %></td>
         <td><%= court.capacity %></td>

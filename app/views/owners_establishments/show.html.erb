@@ -12,7 +12,13 @@
       <dd><%= @owners_establishment.password %></dd>
 
       <dt>Neighborhood</dt>
-      <dd><%= @owners_establishment.neighborhood_id %></dd>
+      <dd>
+        <% if @owners_establishment.neighborhood.present? %>
+          <a href="/neighborhoods/<%= @owners_establishment.neighborhood_id %>">
+            <%= @owners_establishment.neighborhood.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Address</dt>
       <dd><%= @owners_establishment.address %></dd>

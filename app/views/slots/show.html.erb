@@ -12,10 +12,22 @@
       <dd><%= @slot.time %></dd>
 
       <dt>Courts</dt>
-      <dd><%= @slot.courts_id %></dd>
+      <dd>
+        <% if @slot.courts.present? %>
+          <a href="/courts/<%= @slot.courts_id %>">
+            <%= @slot.courts.owner_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Users</dt>
-      <dd><%= @slot.users_id %></dd>
+      <dd>
+        <% if @slot.users.present? %>
+          <a href="/users/<%= @slot.users_id %>">
+            <%= @slot.users.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
