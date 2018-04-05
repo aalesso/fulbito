@@ -24,7 +24,7 @@
           Owner
         </label>
 
-        <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @court.owner_id %>">
+        <%= select_tag(:owner_id, options_from_collection_for_select(OwnersEstablishment.all, :id, :created_at, @court.owner_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for identification -->
