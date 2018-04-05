@@ -1,6 +1,10 @@
 class OwnersEstablishment < ApplicationRecord
   # Direct associations
 
+  has_many   :courts,
+             :foreign_key => "owner_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
