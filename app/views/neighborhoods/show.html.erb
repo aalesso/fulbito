@@ -20,3 +20,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Neighborhood has many owners_establishments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Owners Establishments
+      </li>
+
+      <% @neighborhood.owners_establishments.each do |owners_establishment| %>
+        <li class="list-group-item">
+          <a href="/owners_establishments/<%= owners_establishment.id %>">
+            <%= owners_establishment.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/owners_establishments/<%= owners_establishment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/owners_establishments/<%= owners_establishment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_owners_establishment/<%= owners_establishment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
