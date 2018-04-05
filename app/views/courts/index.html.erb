@@ -18,7 +18,7 @@
 
       <% @courts.each do |court| %>
       <tr>
-        <td><%= court.owner_id %></td>
+        <td><%= court.owner.created_at %></td>
         <td><%= court.identification %></td>
         <td><%= court.images %></td>
         <td><%= court.capacity %></td>
