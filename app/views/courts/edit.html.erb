@@ -18,14 +18,8 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for owner_id -->
-      <div class="form-group">
-        <label for="owner_id" class="control-label">
-          Owner
-        </label>
-
-        <%= select_tag(:owner_id, options_from_collection_for_select(OwnersEstablishment.all, :id, :created_at, @court.owner_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for identification -->
       <div class="form-group">

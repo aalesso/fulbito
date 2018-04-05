@@ -49,8 +49,6 @@ class CourtsController < ApplicationController
 
   def update
     @court = Court.find(params[:id])
-
-    @court.owner_id = params[:owner_id]
     @court.identification = params[:identification]
     @court.images = params[:images]
     @court.capacity = params[:capacity]
