@@ -1,4 +1,6 @@
 ActiveAdmin.register Slot do
+
+ permit_params :date, :time, :courts_id, :users_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
