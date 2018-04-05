@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h3>Owners Establishment #<%= @owners_establishment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @owners_establishment.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @owners_establishment.password %></dd>
+
+      <dt>Neighborhood</dt>
+      <dd><%= @owners_establishment.neighborhood_id %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @owners_establishment.address %></dd>
+
+      <dt>Phone number</dt>
+      <dd><%= @owners_establishment.phone_number %></dd>
+
+      <dt>Website</dt>
+      <dd><%= @owners_establishment.website %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @owners_establishment.name %></dd>
+
+      <dt>Image</dt>
+      <dd><%= @owners_establishment.image %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/owners_establishments" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
