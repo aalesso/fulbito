@@ -1,4 +1,6 @@
 ActiveAdmin.register Court do
+
+ permit_params :owner_id, :identification, :images, :capacity
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
