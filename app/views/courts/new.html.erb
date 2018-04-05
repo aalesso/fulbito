@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @court.errors.any? %>
+  <% @court.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Court</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_court" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for owner_id -->
+      <div class="form-group">
+        <label for="owner_id" class="control-label">
+          Owner
+        </label>
+
+        <input type="text" id="owner_id" name="owner_id" placeholder="Owner" class="form-control" value="<%= @court.owner_id %>">
+      </div>
+
+      <!-- Label and input for identification -->
+      <div class="form-group">
+        <label for="identification" class="control-label">
+          Identification
+        </label>
+
+        <input type="text" id="identification" name="identification" placeholder="Identification" class="form-control" value="<%= @court.identification %>">
+      </div>
+
+      <!-- Label and input for images -->
+      <div class="form-group">
+        <label for="images" class="control-label">
+          Images
+        </label>
+
+        <input type="text" id="images" name="images" placeholder="Images" class="form-control" value="<%= @court.images %>">
+      </div>
+
+      <!-- Label and input for capacity -->
+      <div class="form-group">
+        <label for="capacity" class="control-label">
+          Capacity
+        </label>
+
+        <input type="text" id="capacity" name="capacity" placeholder="Capacity" class="form-control" value="<%= @court.capacity %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Court
+      </button>
+      or
+      <a href="/courts">Cancel</a>
+    </form>
+  </div>
+</div>
