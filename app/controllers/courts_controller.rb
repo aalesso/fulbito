@@ -1,4 +1,14 @@
 class CourtsController < ApplicationController
+  before_action :current_owners_establishment_must_be_court_owner, :only => [:edit, :update, :destroy]
+
+  def current_owners_establishment_must_be_court_owner
+    court = Court.find(params[:id])
+
+    unless current_owners_establishment == court.owner
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @courts = Court.all
 

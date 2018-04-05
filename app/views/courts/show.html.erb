@@ -23,12 +23,14 @@
       <a href="/courts" class="btn btn-primary">
         Back
       </a>
-      <a href="/courts/<%= @court.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_court/<%= @court.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_owners_establishment == @court.owner %>
+        <a href="/courts/<%= @court.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_court/<%= @court.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
