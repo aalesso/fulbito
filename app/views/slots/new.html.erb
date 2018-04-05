@@ -42,7 +42,7 @@
           Courts
         </label>
 
-        <input type="text" id="courts_id" name="courts_id" placeholder="Courts" class="form-control" value="<%= @slot.courts_id %>">
+        <%= select_tag(:courts_id, options_from_collection_for_select(Court.all, :id, :owner_id, @slot.courts_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for users_id -->
