@@ -1,4 +1,6 @@
 ActiveAdmin.register OwnersEstablishment do
+
+ permit_params :email, :password, :neighborhood_id, :address, :phone_number, :website, :name, :image
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
