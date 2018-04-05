@@ -1,6 +1,6 @@
 class OwnersEstablishmentsController < ApplicationController
   def index
-    @owners_establishments = OwnersEstablishment.all
+    @owners_establishments = OwnersEstablishment.page(params[:page]).per(10)
   end
 
   def show
