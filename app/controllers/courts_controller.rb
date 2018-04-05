@@ -10,7 +10,8 @@ class CourtsController < ApplicationController
   end
 
   def index
-    @courts = Court.page(params[:page]).per(10)
+    @q = Court.ransack(params[:q])
+    @courts = @q.result(:distinct => true).includes(:owner, :slots).page(params[:page]).per(10)
 
     render("courts/index.html.erb")
   end
