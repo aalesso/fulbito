@@ -1,6 +1,9 @@
 class OwnersEstablishment < ApplicationRecord
   # Direct associations
 
+  belongs_to :neighborhood,
+             :counter_cache => true
+
   has_many   :courts,
              :foreign_key => "owner_id",
              :dependent => :destroy
